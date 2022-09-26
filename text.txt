@@ -1,0 +1,39 @@
+1. App contains all the business logix of application
+config - configuration for application
+database - modifying and working with database schema
+resourses - styles scripts, but also translations byt also some HTML
+MVC - models live in the app folder
+controllers - http/controllers
+resourses -  views
+Routes are important folder here we confugure
+routes to our application. Routes are entry points to
+our application
+
+<h1>If you feel dizzy already don't worry 
+this is just an overview, We will cover all this
+again later</h1>
+test and vendor contain all the thirth party
+libraries which you will install
+.env - it contains envirnamental information like your
+database credentials
+composer.json and packajge.json
+ to manage dependancies
+
+ 2. Artisan script
+
+ run php artisan in application  folder
+ php artisan tinker
+ php artisan serve - starts develpoer server
+
+ /* Part 2 */
+
+ Someone visists website->he reaches us though index.php->
+ router(we can define dinamic(like wit hid of post) and static routes) component comes in defining what to do
+ passing in to our controller
+ Conrolles is a peace of code that actually handles your requests
+ the job if router is to just pass your request to a specific request 
+ and the job of controller is to generate a response
+
+ Continuing to install routing
+
+ 
