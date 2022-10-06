@@ -19,9 +19,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'home'])
   ->name('home.index');
+
 Route::get('/contact', [HomeController::class, 'contact'])
   ->name('contact.index');
+
 Route::get('/single', AboutController::class);
+
+Route::get('/posts/add', [PostController::class, 'create'])
+  ->name('posts.create');
 
 Route::resource('posts', PostController::class);
 //->only(['index', 'show', 'create', 'store', 'edit', 'update']);
@@ -54,32 +59,28 @@ Route::resource('posts', PostController::class);
 //           ->header('Content-Type', 'application/json')
 //           ->cookie('MY_COOKIE', 'Hovhannes Verdyan', 3600);
 //     } );
-    
+
 //     Route::get('/redirect', function() {
 //         return redirect('/posts/1');
 //     });
-    
+
 //     Route::get('/back', function() {
 //         return back();
 //     });
-    
+
 //     Route::get('/named-root', function() {
 //         return redirect()->route('hi.index', ['id' => 2]);
 //     });
-    
+
 //     Route::get('/away', function() {
 //         return redirect()->away('https://google.com');
 //     });
-    
+
 //     Route::get('/download', function() {
 //         return response()->download(public_path('/IMG.jpg'), 'face.jpg');
 //     });
 // });
 
 
-
-
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
