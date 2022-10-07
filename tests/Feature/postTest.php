@@ -70,12 +70,15 @@ class postTest extends TestCase
 
     public function testStoreValid()
     {
+
       $params = [
         'title' => 'Valid Post',
         'content' => 'Valid Content'
       ];
 
-      $this->post('/posts', $params)
+
+      $this->actingAs($this->user())
+        ->post('/posts', $params)
         ->assertStatus(302)
         ->assertSessionhas('status');
 
@@ -89,7 +92,8 @@ class postTest extends TestCase
             'content' => 'x'
           ];
 
-          $this->post('/posts', $params)
+          $this->actingAs($this->user())
+            ->post('/posts', $params)
             ->assertStatus(302)
             ->assertSessionHas('errors');
 

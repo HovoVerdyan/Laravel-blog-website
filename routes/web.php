@@ -21,7 +21,8 @@ Route::get('/', [HomeController::class, 'home'])
   ->name('home.index');
 
 Route::get('/contact', [HomeController::class, 'contact'])
-  ->name('contact.index');
+  ->name('contact.index')
+    ->middleware('auth');
 
 Route::get('/single', AboutController::class);
 
